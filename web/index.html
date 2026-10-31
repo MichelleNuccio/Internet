@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ENTANGLED DEPENDANCIES — spatial study</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="testata">
+    <div class="identita">
+      <h1>ENTANGLED<br>DEPENDANCIES</h1>
+      <section class="introduzione" lang="en" aria-label="About the project" tabindex="0">
+        <p>Internet is a planetary phenomena, something so big and complex that can’t be understood in its totality.</p>
+        <p>There are infinite ways to talk about it but, here, <strong>Control</strong> is used as a critical lens of investigation for this <em>entangled</em> ecosystem and <strong>Scale</strong> as a narrative line - from its conception as a global place dominated by agency and protocols where inequalities manifest, to a space inhabited by humans and not-humans actors.</p>
+        <p><em>Who owns the power and the informations? And how do we feed everyday the system that controls us?</em></p>
+        <p>To investigate this topic, I will allow myself to be lost in this infinite collection of data, remembering that data never represents the objective truth, but that the way in which they are represented build only one subjective narrative among many. In this sense, the final output wouldn’t give a different a total understanding of the internet itself but, will propose [number] different ways to observe the same plot: <strong>The internet as battle ground</strong> in which dependences between countries, companies and individuals take shape.</p>
+      </section>
+    </div>
+  </header>
+
+  <main>
+    <svg id="spazio" role="group" aria-label="Vortex of 36 rectangular frames. Drag to rotate or use the arrow keys." tabindex="0">
+      <g id="cornici"></g>
+    </svg>
+    <p class="firma">THEORETICAL MACHINE</p>
+    <aside id="minimappa" aria-label="Position in the vortex" hidden>
+      <p>LOCATOR <span>INSIDE</span></p>
+      <svg id="mappa" viewBox="0 0 180 150" role="img" aria-label="Vortex floor plan and viewing direction"></svg>
+      <label for="quota">LEVEL <output id="livello-attuale">19 / 36</output></label>
+      <input id="quota" type="range" min="0" max="35" value="18" aria-label="Move between vortex levels">
+      <p class="legenda-mappa">● YOU ARE HERE <span>↑ MACRO / ↓ MICRO</span></p>
+    </aside>
+    <div id="movimento" aria-label="Movement inside the vortex" hidden>
+      <button data-passo="avanti" aria-label="Forward">↑</button>
+      <button data-passo="sinistra" aria-label="Move left">←</button>
+      <button data-passo="indietro" aria-label="Backward">↓</button>
+      <button data-passo="destra" aria-label="Move right">→</button>
+    </div>
+    <p class="conteggio">36 FRAMES / NO CONTENT</p>
+  </main>
+
+  <footer>
+    <p class="istruzioni"><span>●</span> Drag to explore</p>
+    <div class="controlli">
+      <nav aria-label="Viewpoint">
+        <button data-vista="prospetto" aria-pressed="false">Elevation</button>
+        <button data-vista="alto" aria-pressed="false">Top view</button>
+        <button data-vista="prospettiva" aria-pressed="true">Perspective</button>
+      </nav>
+      <label for="apertura">Opening <output id="valore" for="apertura">100%</output></label>
+      <div class="slider"><span>Spiral</span><input id="apertura" type="range" min="0" max="100" value="100"><span>Hourglass</span></div>
+    </div>
+    <div class="azioni">
+      <button id="entra" aria-pressed="false">Enter the vortex ↗</button>
+      <button id="pausa" aria-label="Start rotation" aria-pressed="false">▷</button>
+    </div>
+  </footer>
+
+</body>
+</html>

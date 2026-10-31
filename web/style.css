@@ -1,0 +1,83 @@
+/* Sfondo blu, testi e linee bianchi. */
+:root { font-family: 'Roboto Mono', monospace; color: var(--inchiostro); background: #0000FF; color-scheme: dark; --inchiostro: #FFFFFF; }
+* { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+button, input { font: inherit; }
+button { border: 0; background: none; color: inherit; cursor: pointer; padding: 7px 0; }
+button:focus-visible, input:focus-visible, svg:focus-visible { outline: 2px solid var(--inchiostro); outline-offset: 5px; }
+.testata { position: fixed; inset: 35px 2.7vw auto; display: flex; align-items: flex-start; justify-content: space-between; z-index: 2; pointer-events: none; }
+.testata > * { pointer-events: auto; }
+h1 { margin: 0; font-size: clamp(28px, 3vw, 46px); font-weight: 300; letter-spacing: -0.04em; line-height: 1.1; }
+h1 span { display: inline-block; color: var(--inchiostro); margin-left: 8px; letter-spacing: 0; }
+.identita { pointer-events: none; }
+.introduzione { width: min(25vw, 360px); margin-top: 24px; max-height: max(100px, calc(100dvh - 340px)); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: white transparent; font-size: 11px; font-weight: 300; line-height: 1.65; pointer-events: auto; padding-right: 10px; background: #0000FF; }
+.introduzione p { margin: 0 0 1.2em; }
+.introduzione p:last-child { margin-bottom: 0; }
+.introduzione strong { font-weight: 500; }
+.introduzione:focus-visible { outline: 1px solid white; outline-offset: 5px; }
+#spazio { position: absolute; inset: 0; width: 100%; height: 100%; touch-action: none; cursor: grab; }
+#spazio.trascinamento { cursor: grabbing; }
+.cornice { fill: none; stroke: var(--inchiostro); stroke-width: .85; vector-effect: non-scaling-stroke; pointer-events: stroke; cursor: pointer; }
+.cornice.selezionata { stroke: #FF00FF; stroke-width: 1.8; opacity: 1; }
+.cornice:hover, .cornice:focus-visible { stroke: var(--inchiostro); stroke-width: 1.8; outline: none; opacity: 1; }
+.cornice.selezionata:hover, .cornice.selezionata:focus-visible { stroke: #FF00FF; }
+.numero { fill: var(--inchiostro); font-size: 9px; font-family: inherit; pointer-events: none; }
+.numero.selezionato { fill: var(--inchiostro); }
+.firma { position: fixed; top: 50%; left: 2.7vw; writing-mode: vertical-rl; transform: rotate(180deg); font-size: 10px; letter-spacing: 2px; color: var(--inchiostro); }
+.conteggio { position: fixed; bottom: 16%; left: 2.7vw; font-size: 10px; letter-spacing: 1px; color: var(--inchiostro); }
+footer { position: fixed; bottom: 28px; left: 2.7vw; right: 2.7vw; display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; pointer-events: none; font-size: 12px; }
+footer > * { pointer-events: auto; }
+.istruzioni { margin: 0 0 14px; }
+.istruzioni span { color: var(--inchiostro); margin-right: 8px; }
+.controlli { position: absolute; width: min(340px, 38vw); left: 50%; bottom: 0; transform: translateX(-50%); }
+nav { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
+nav button { color: var(--inchiostro); font-size: 11px; }
+nav button[aria-pressed="true"] { color: var(--inchiostro); }
+label { display: flex; justify-content: space-between; margin-bottom: 14px; }
+output { color: var(--inchiostro); }
+.slider { display: flex; align-items: center; gap: 16px; color: var(--inchiostro); font-size: 10px; }
+input { min-width: 0; width: 100%; accent-color: var(--inchiostro); cursor: pointer; }
+input[type="range"] { appearance: none; background: transparent; }
+input[type="range"]::-webkit-slider-runnable-track { height: 1px; background: var(--inchiostro); }
+input[type="range"]::-moz-range-track { height: 1px; background: var(--inchiostro); }
+input[type="range"]::-webkit-slider-thumb { appearance: none; width: 12px; height: 12px; margin-top: -5.5px; border: 0; border-radius: 50%; background: var(--inchiostro); }
+input[type="range"]::-moz-range-thumb { width: 12px; height: 12px; border: 0; border-radius: 50%; background: var(--inchiostro); }
+.azioni { display: flex; gap: 32px; align-items: center; margin-bottom: 7px; }
+#pausa { font-size: 19px; }
+@media (max-width: 650px) {
+  .testata { top: 18px; left: 20px; right: 20px; }
+  h1 { font-size: clamp(24px, 5.5vw, 36px); }
+  .introduzione { width: 44vw; max-height: 32dvh; font-size: 10px; margin-top: 18px; }
+  .firma { left: 12px; font-size: 8px; }
+  .conteggio { left: 20px; bottom: 180px; font-size: 8px; }
+  footer { bottom: 20px; left: 20px; right: 20px; }
+  .controlli { width: 100%; bottom: 45px; }
+  .istruzioni { font-size: 10px; margin-bottom: 7px; }
+  .azioni { gap: 18px; }
+}
+
+/* Esplorazione in prima persona e localizzatore. */
+[hidden] { display: none !important; }
+#entra { border: 1px solid currentColor; padding: 10px 14px; }
+#minimappa { position: fixed; z-index: 3; top: 125px; right: 2.7vw; width: 190px; padding: 12px; border: 1px solid white; background: #0000FF; font-size: 9px; }
+#minimappa p { display: flex; justify-content: space-between; gap: 8px; margin: 0 0 10px; }
+#minimappa p span { font-size: 8px; }
+#mappa { display: block; width: 100%; height: 150px; margin-bottom: 12px; }
+#minimappa label { margin-bottom: 8px; font-size: 9px; }
+#minimappa .legenda-mappa { margin: 12px 0 0; color: #FF00FF; flex-wrap: wrap; }
+#movimento { position: fixed; z-index: 3; bottom: 95px; left: 50%; transform: translateX(-50%); display: grid; grid-template-columns: repeat(3, 40px); gap: 5px; }
+#movimento button { border: 1px solid white; height: 36px; touch-action: none; }
+#movimento button:first-child { grid-column: 2; }
+#movimento button:nth-child(2) { grid-column: 1; }
+.interno .controlli, .interno .conteggio, .interno #pausa { display: none; }
+.interno .istruzioni { max-width: 36vw; font-size: 10px; line-height: 1.6; }
+.interno .azioni { margin-left: auto; }
+@media (max-width: 650px) {
+  .azioni { gap: 12px; }
+  #entra { font-size: 10px; padding: 8px; }
+  body:not(.interno) #entra { position: fixed; right: 20px; bottom: 180px; }
+  #minimappa { top: 115px; right: 15px; width: 145px; padding: 8px; }
+  #mappa { height: 105px; margin-bottom: 8px; }
+  .interno .istruzioni { max-width: 44vw; font-size: 8px; }
+  #movimento { bottom: 90px; }
+}
