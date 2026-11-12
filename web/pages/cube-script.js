@@ -22,6 +22,7 @@ async function startViewer() {
   if (location.protocol === 'file:') {
     throw new Error('Open this page through a local HTTP server to load the 3D model.');
   }
+  const loadWarnings = [];
   const THREE = await import('three');
   const { OrbitControls } = await import('three/addons/controls/OrbitControls.js');
   const { GLTFLoader } = await import('three/addons/loaders/GLTFLoader.js');
@@ -164,7 +165,15 @@ async function startViewer() {
     const firstMaterial=material.clone();firstMaterial.map=firstTexture;
     const firstAtlas=new THREE.Mesh(firstGeometry,firstMaterial);firstAtlas.name='Submarine cables / first plane';firstAtlas.userData.contentPlane=0;firstAtlas.renderOrder=3;surface.add(firstAtlas);
     const {createCableAtlas}=await import('../cable-atlas.js');
-    contentControllers.set(firstTexture,await createCableAtlas(firstCanvas));
+    try {
+      contentControllers.set(firstTexture,await createCableAtlas(firstCanvas));
+    } catch (error) {
+      console.error('Submarine cable layer unavailable:', error);
+      const context=firstCanvas.getContext('2d');
+      context.fillStyle='#0000ff';context.fillRect(0,0,firstCanvas.width,firstCanvas.height);
+      context.fillStyle='#f3f1dd';context.font='24px monospace';context.fillText('CABLE DATA UNAVAILABLE',25,85);
+      loadWarnings.push('3D viewer ready; some map data is unavailable.');
+    }
     const {createExploration}=await import('./explore.js');
     exploration=createExploration({THREE,model,surface,texture:atlasTexture,planeTextures:new Map([[0,firstTexture],[2,atlasTexture]]),orbitCamera:camera,controls,onCamera:next=>{activeCamera=next;}});
     let wasEnabled = true;
@@ -224,7 +233,8 @@ async function startViewer() {
       render();
     }
   });
-  status.hidden = true;
+  status.textContent = loadWarnings.join(' ');
+  status.hidden = loadWarnings.length === 0;
   render();
 }
 

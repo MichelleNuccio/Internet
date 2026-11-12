@@ -48,6 +48,7 @@ legend { font-size:8px; opacity:.5; }
 .ticker div { white-space:nowrap; width:max-content; animation:ticker 24s linear infinite; }
 @keyframes ticker { to { transform:translateX(-50%); } }
 #status { position:absolute; top:75px; right:30px; max-width:260px; font-size:11px; }
+#status:not([hidden]) { top:220px; left:30px; right:auto; color:var(--acid); background:#0000ffcc; }
 [hidden] { display:none!important; }
 #evidence { position:absolute; z-index:8; left:50%; top:50%; transform:translate(-50%,-50%) rotate(-2deg); width:min(480px,90vw); padding:28px; background:var(--paper); color:#0000ff; border:1px solid; box-shadow:12px 12px 0 #000080; }
 #evidence h2 { font-family:Georgia,serif; font-size:34px; font-weight:400; letter-spacing:-.04em; }
@@ -74,7 +75,7 @@ noscript { position:absolute; top:45%; left:30px; }
  .inside .mode-label { top:100px; }.inside .panel { width:225px; bottom:142px; }.inside .panel details { display:none; }
  #inside-controls { bottom:82px; gap:3px; }#inside-controls button { min-width:34px; padding:6px; }
  .inside .enter { right:15px; top:22px; width:100px; height:75px; }.inside .heading h1 { font-size:20px; }.inside .edition { max-width:190px; font-size:6px; }
- #status { top:210px; left:18px; font-size:9px; }
+ #status { top:210px; left:18px; right:auto; max-width:calc(100vw - 180px); font-size:9px; }
 }
 @media(prefers-reduced-motion:reduce) { .ticker div { animation:none; } }
 .inside #viewer::after { content:'+'; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font:300 20px monospace; color:#deff0099; pointer-events:none; }
