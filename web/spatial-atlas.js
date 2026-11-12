@@ -1,6 +1,6 @@
 // A spatial storyboard: separate map views overlap as evidence, never as totals.
 export async function createSpatialAtlas(canvas, button, status, baseURL) {
-  const ctx=canvas.getContext('2d'), root=new URL('../material/piano-03/output/',import.meta.url);
+  const ctx=canvas.getContext('2d'), root=baseURL;
   const $=id=>document.getElementById(id), reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
   const ink='#05051b', paper='#f3f1dd', acid='#deff00', violet='#bdbdff';
   const format=new Intl.NumberFormat('en-US');

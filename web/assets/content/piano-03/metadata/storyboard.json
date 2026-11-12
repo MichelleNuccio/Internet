@@ -1,0 +1,342 @@
+{
+  "duration": 32,
+  "chapters": [
+    {
+      "title": "01 / THE FIELD",
+      "question": "Where does the internet appear?",
+      "reading": "Estimated positions become national totals. These are database assignments, not verified server buildings.",
+      "plates": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "featured": [
+        0,
+        3,
+        4
+      ],
+      "metric": "Estimated IPv4 geography; location counts and national aggregates use different denominators."
+    },
+    {
+      "title": "02 / PUBLISHED TERRITORIES",
+      "question": "What do providers choose to publish?",
+      "reading": "Provider lists describe different scopes. Google Cloud overlaps Google; these totals must not be added together.",
+      "plates": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "featured": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "metric": "Published IPv4 counts by country / shared logarithmic scale."
+    },
+    {
+      "title": "03 / OBSERVED NETWORKS",
+      "question": "Who originates the address space?",
+      "reading": "One BGP snapshot, four selected primary organizations. Origin registration is not legal ownership.",
+      "plates": [
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "featured": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "metric": "Observed IPv4 by country / shared logarithmic scale."
+    },
+    {
+      "title": "04 / RELATIVE WEIGHT",
+      "question": "How much of a country’s observed space?",
+      "reading": "The same national denominator changes the comparison. A high share need not mean a large absolute address count.",
+      "plates": [
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "featured": [
+        15,
+        16,
+        17,
+        18
+      ],
+      "metric": "National share / PowerNorm gamma 0.3 / 0–100%."
+    }
+  ],
+  "plates": [
+    {
+      "id": 0,
+      "number": 1,
+      "title": "Internet, emerging",
+      "chapter": 0,
+      "company": null,
+      "preview": "previews/Map01_internet_locations.png",
+      "pdf": "maps/Map01_internet_locations.pdf",
+      "comparison": false,
+      "monochrome": false,
+      "scope": "geolocation",
+      "dataNote": "Table: national DB11 address totals. Plates 01–03 show estimated point geography; plate 03 has no quantity encoding."
+    },
+    {
+      "id": 1,
+      "number": 2,
+      "title": "Where the addresses gather",
+      "chapter": 0,
+      "company": null,
+      "preview": "previews/Map02_ipv4_locations_color.png",
+      "pdf": "maps/Map02_ipv4_locations_color.pdf",
+      "comparison": false,
+      "monochrome": false,
+      "scope": "geolocation",
+      "dataNote": "Table: national DB11 address totals. Plates 01–03 show estimated point geography; plate 03 has no quantity encoding."
+    },
+    {
+      "id": 2,
+      "number": 3,
+      "title": "Internet, as a pattern",
+      "chapter": 0,
+      "company": null,
+      "preview": "previews/Map03_ipv4_locations_monochrome.png",
+      "pdf": "maps/Map03_ipv4_locations_monochrome.pdf",
+      "comparison": false,
+      "monochrome": true,
+      "scope": "geolocation",
+      "dataNote": "Table: national DB11 address totals. Plates 01–03 show estimated point geography; plate 03 has no quantity encoding."
+    },
+    {
+      "id": 3,
+      "number": 4,
+      "title": "Unequal address space",
+      "chapter": 0,
+      "company": null,
+      "preview": "previews/Map04_ipv4_totals_by_country.png",
+      "pdf": "maps/Map04_ipv4_totals_by_country.pdf",
+      "comparison": false,
+      "monochrome": false,
+      "scope": "geolocation",
+      "dataNote": "Table: national DB11 address totals. Plates 01–03 show estimated point geography; plate 03 has no quantity encoding."
+    },
+    {
+      "id": 4,
+      "number": 5,
+      "title": "Across administrative borders",
+      "chapter": 0,
+      "company": null,
+      "preview": "previews/Map05_foreign_registered_organizations.png",
+      "pdf": "maps/Map05_foreign_registered_organizations.pdf",
+      "comparison": false,
+      "monochrome": false,
+      "scope": "registration",
+      "dataNote": "Table: foreign-registered address count and share of observed national IPv4. Unknown and ambiguous origins remain in the denominator."
+    },
+    {
+      "id": 5,
+      "number": 6,
+      "title": "Google / published footprint",
+      "chapter": 1,
+      "company": "Google",
+      "preview": "previews/Map06_google_published_ipv4.png",
+      "pdf": "maps/Map06_google_published_ipv4.pdf",
+      "comparison": false,
+      "monochrome": false,
+      "scope": "published",
+      "dataNote": "Table: deduplicated published-list IPv4 per estimated country. List scopes differ; Google Cloud overlaps Google."
+    },
+    {
+      "id": 6,
+      "number": 7,
+      "title": "Google Cloud / published footprint",
+      "chapter": 1,
+      "company": "Google Cloud",
+      "preview": "previews/Map07_google_cloud_published_ipv4.png",
+      "pdf": "maps/Map07_google_cloud_published_ipv4.pdf",
+      "comparison": false,
+      "monochrome": false,
+      "scope": "published",
+      "dataNote": "Table: deduplicated published-list IPv4 per estimated country. List scopes differ; Google Cloud overlaps Google."
+    },
+    {
+      "id": 7,
+      "number": 8,
+      "title": "AWS / published footprint",
+      "chapter": 1,
+      "company": "AWS",
+      "preview": "previews/Map08_aws_published_ipv4.png",
+      "pdf": "maps/Map08_aws_published_ipv4.pdf",
+      "comparison": false,
+      "monochrome": false,
+      "scope": "published",
+      "dataNote": "Table: deduplicated published-list IPv4 per estimated country. List scopes differ; Google Cloud overlaps Google."
+    },
+    {
+      "id": 8,
+      "number": 9,
+      "title": "Azure / published footprint",
+      "chapter": 1,
+      "company": "Azure Public",
+      "preview": "previews/Map09_azure_public_published_ipv4.png",
+      "pdf": "maps/Map09_azure_public_published_ipv4.pdf",
+      "comparison": false,
+      "monochrome": false,
+      "scope": "published",
+      "dataNote": "Table: deduplicated published-list IPv4 per estimated country. List scopes differ; Google Cloud overlaps Google."
+    },
+    {
+      "id": 9,
+      "number": 10,
+      "title": "Published corporate footprints",
+      "chapter": 1,
+      "company": null,
+      "preview": "previews/Map10_published_provider_comparison.png",
+      "pdf": "maps/Map10_published_provider_comparison.pdf",
+      "comparison": true,
+      "monochrome": false,
+      "scope": "published",
+      "dataNote": "Table: deduplicated published-list IPv4 per estimated country. List scopes differ; Google Cloud overlaps Google."
+    },
+    {
+      "id": 10,
+      "number": 11,
+      "title": "Amazon / observed networks",
+      "chapter": 2,
+      "company": "Amazon",
+      "preview": "previews/Map11_amazon_bgp_ipv4.png",
+      "pdf": "maps/Map11_amazon_bgp_ipv4.pdf",
+      "comparison": false,
+      "monochrome": false,
+      "scope": "bgp",
+      "dataNote": "Table: selected primary-organization IPv4 counts and national shares. Same BGP snapshot and national denominator; not traffic or market share."
+    },
+    {
+      "id": 11,
+      "number": 12,
+      "title": "Meta / observed networks",
+      "chapter": 2,
+      "company": "Meta",
+      "preview": "previews/Map12_meta_bgp_ipv4.png",
+      "pdf": "maps/Map12_meta_bgp_ipv4.pdf",
+      "comparison": false,
+      "monochrome": false,
+      "scope": "bgp",
+      "dataNote": "Table: selected primary-organization IPv4 counts and national shares. Same BGP snapshot and national denominator; not traffic or market share."
+    },
+    {
+      "id": 12,
+      "number": 13,
+      "title": "Google / observed networks",
+      "chapter": 2,
+      "company": "Google",
+      "preview": "previews/Map13_google_bgp_ipv4.png",
+      "pdf": "maps/Map13_google_bgp_ipv4.pdf",
+      "comparison": false,
+      "monochrome": false,
+      "scope": "bgp",
+      "dataNote": "Table: selected primary-organization IPv4 counts and national shares. Same BGP snapshot and national denominator; not traffic or market share."
+    },
+    {
+      "id": 13,
+      "number": 14,
+      "title": "Microsoft / observed networks",
+      "chapter": 2,
+      "company": "Microsoft",
+      "preview": "previews/Map14_microsoft_bgp_ipv4.png",
+      "pdf": "maps/Map14_microsoft_bgp_ipv4.pdf",
+      "comparison": false,
+      "monochrome": false,
+      "scope": "bgp",
+      "dataNote": "Table: selected primary-organization IPv4 counts and national shares. Same BGP snapshot and national denominator; not traffic or market share."
+    },
+    {
+      "id": 14,
+      "number": 15,
+      "title": "Four companies, one routing lens",
+      "chapter": 2,
+      "company": null,
+      "preview": "previews/Map15_bgp_company_comparison.png",
+      "pdf": "maps/Map15_bgp_company_comparison.pdf",
+      "comparison": true,
+      "monochrome": false,
+      "scope": "bgp",
+      "dataNote": "Table: selected primary-organization IPv4 counts and national shares. Same BGP snapshot and national denominator; not traffic or market share."
+    },
+    {
+      "id": 15,
+      "number": 16,
+      "title": "Amazon / relative weight",
+      "chapter": 3,
+      "company": "Amazon",
+      "preview": "previews/Map16_amazon_national_share.png",
+      "pdf": "maps/Map16_amazon_national_share.pdf",
+      "comparison": false,
+      "monochrome": false,
+      "scope": "bgp",
+      "dataNote": "Table: selected primary-organization IPv4 counts and national shares. Same BGP snapshot and national denominator; not traffic or market share."
+    },
+    {
+      "id": 16,
+      "number": 17,
+      "title": "Meta / relative weight",
+      "chapter": 3,
+      "company": "Meta",
+      "preview": "previews/Map17_meta_national_share.png",
+      "pdf": "maps/Map17_meta_national_share.pdf",
+      "comparison": false,
+      "monochrome": false,
+      "scope": "bgp",
+      "dataNote": "Table: selected primary-organization IPv4 counts and national shares. Same BGP snapshot and national denominator; not traffic or market share."
+    },
+    {
+      "id": 17,
+      "number": 18,
+      "title": "Google / relative weight",
+      "chapter": 3,
+      "company": "Google",
+      "preview": "previews/Map18_google_national_share.png",
+      "pdf": "maps/Map18_google_national_share.pdf",
+      "comparison": false,
+      "monochrome": false,
+      "scope": "bgp",
+      "dataNote": "Table: selected primary-organization IPv4 counts and national shares. Same BGP snapshot and national denominator; not traffic or market share."
+    },
+    {
+      "id": 18,
+      "number": 19,
+      "title": "Microsoft / relative weight",
+      "chapter": 3,
+      "company": "Microsoft",
+      "preview": "previews/Map19_microsoft_national_share.png",
+      "pdf": "maps/Map19_microsoft_national_share.pdf",
+      "comparison": false,
+      "monochrome": false,
+      "scope": "bgp",
+      "dataNote": "Table: selected primary-organization IPv4 counts and national shares. Same BGP snapshot and national denominator; not traffic or market share."
+    },
+    {
+      "id": 19,
+      "number": 20,
+      "title": "The geography of relative weight",
+      "chapter": 3,
+      "company": null,
+      "preview": "previews/Map20_national_share_comparison.png",
+      "pdf": "maps/Map20_national_share_comparison.pdf",
+      "comparison": true,
+      "monochrome": false,
+      "scope": "bgp",
+      "dataNote": "Table: selected primary-organization IPv4 counts and national shares. Same BGP snapshot and national denominator; not traffic or market share."
+    }
+  ]
+}

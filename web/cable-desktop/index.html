@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0000ff"><title>e-ntanglement / Plane 01 desktop</title><link rel="stylesheet" href="style.css?v=runtime-2"><script type="importmap">{"imports":{"three":"../assets/vendor/three/build/three.module.js","three/addons/":"../assets/vendor/three/examples/jsm/"}}</script><script type="module" src="desktop.js?v=runtime-2"></script></head>
+<body><main id="cable-desktop">
+  <header class="desktop-bar"><a class="brand" href="#">e-ntanglement</a><span>PLANE 01 / SUBMARINE NETWORKS</span><button id="leave-desktop">Back to vortex ↗</button></header>
+  <div class="desktop-caption" aria-hidden="true">A NETWORK<br>IS A PLACE.</div>
+  <nav class="desktop-icons" aria-label="Desktop applications"><button data-open="charts"><span>▥</span>Charts</button><button data-open="code"><span>&lt;/&gt;</span>Code</button><button data-open="dataset"><span>▦</span>Dataset</button></nav>
+  <section id="globe-area" aria-label="Interactive 3D cable globe"><canvas id="globe-canvas" aria-label="Drag to rotate the globe, scroll to zoom, click a cable route to select it" tabindex="0"></canvas></section>
+  <aside class="globe-card"><p>THE NETWORK / IN THREE DIMENSIONS</p><h1>Turn the world.<br>Follow a cable.</h1><p>Drag to rotate · Scroll to zoom · Click a route</p><button id="globe-focus" aria-pressed="false">Explore globe ↗</button><p id="globe-selection" role="status">Loading local cable routes…</p><button id="globe-show-data" hidden>Find in dataset ↗</button></aside>
+  <div id="desktop-windows">
+    <section class="desktop-window charts-window" data-window="charts" aria-labelledby="charts-title">
+      <header class="window-title" tabindex="0"><h2 id="charts-title">▥ Maps and graphics</h2><div><button data-action="minimize" aria-label="Minimize maps and graphics">−</button><button data-action="maximize" aria-label="Maximize maps and graphics">□</button><button data-action="close" aria-label="Close maps and graphics">×</button></div></header>
+      <div class="window-toolbar"><button id="figure-prev" aria-label="Previous figure">←</button><select id="figure-select" aria-label="Choose a map or graphic"></select><button id="figure-next" aria-label="Next figure">→</button><button id="live-toggle" aria-pressed="false">Live view</button></div>
+      <div class="chart-scroll"><img id="chart-image" alt=""><canvas id="live-canvas" width="1200" height="600" hidden aria-label="Animated cable maps and diagrams"></canvas></div>
+      <footer class="window-status"><span id="figure-caption">Original notebook figure</span><a id="figure-full" target="_blank" rel="noopener">Open full image ↗</a></footer>
+    </section>
+    <section class="desktop-window code-window" data-window="code" aria-labelledby="code-title">
+      <header class="window-title" tabindex="0"><h2 id="code-title">&lt;/&gt; Commented code</h2><div><button data-action="minimize" aria-label="Minimize code">−</button><button data-action="maximize" aria-label="Maximize code">□</button><button data-action="close" aria-label="Close code">×</button></div></header>
+      <div class="window-toolbar"><select id="code-file" aria-label="Code file"><option value="animation">animation.js / JavaScript</option><option value="globe">globe.js / JavaScript</option><option value="python">Selected figure / Python</option></select><a id="code-download" download>Download source ↓</a></div>
+      <pre id="desktop-code" tabindex="0" aria-label="Commented source code"></pre><footer class="window-status"><span id="code-caption">Actual source of the visualizations</span></footer>
+    </section>
+    <section class="desktop-window dataset-window" data-window="dataset" aria-labelledby="dataset-title">
+      <header class="window-title" tabindex="0"><h2 id="dataset-title">▦ cable-systems.xlsx</h2><div><button data-action="minimize" aria-label="Minimize dataset">−</button><button data-action="maximize" aria-label="Maximize dataset">□</button><button data-action="close" aria-label="Close dataset">×</button></div></header>
+      <div class="window-toolbar dataset-tools"><input id="dataset-search" type="search" aria-label="Search dataset" placeholder="Search cable, owner, year…"><select id="dataset-status" aria-label="Filter status"><option value="">All statuses</option><option>In service</option><option>Planned</option><option>Unknown</option></select><a href="../assets/content/piano-01/cable-systems.xlsx" download>Excel ↓</a><button id="dataset-csv">CSV ↓</button></div>
+      <div class="formula-bar"><output id="cell-address">A1</output><span>fx</span><output id="cell-value">Select a cell to inspect its value. Click a cable name to locate it on the globe.</output></div>
+      <div class="sheet-scroll"><table id="dataset-grid" aria-label="Cable systems spreadsheet"><thead><tr class="column-letters"><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th></tr><tr class="column-names"><th>1</th><th><button data-sort="name">Cable ↕</button></th><th><button data-sort="owners">Owners ↕</button></th><th><button data-sort="group">Group ↕</button></th><th><button data-sort="length_km">Length km ↓</button></th><th><button data-sort="status">Status ↕</button></th><th><button data-sort="year">RFS year ↕</button></th><th>ID</th></tr></thead><tbody id="dataset-rows"></tbody></table></div>
+      <footer class="window-status"><span class="sheet-tab">Cable systems</span><span id="dataset-count" role="status">Loading…</span><span>Source snapshot / read-only</span></footer>
+    </section>
+  </div>
+  <footer class="desktop-taskbar"><span class="taskbar-label">PLANE 01</span><button data-open="charts">▥ Charts</button><button data-open="code">&lt;/&gt; Code</button><button data-open="dataset">▦ Dataset</button><button id="arrange-windows">Arrange windows</button><span id="desktop-status" role="status">Opening workspace…</span></footer>
+  <dialog id="source-note"><h2>About this dataset</h2><p>TeleGeography cable metadata and generalized routes from the copied local notebook. The snapshot date is unverified. Recorded status and planned dates are not verified current status. Routes do not measure traffic, capacity or legal control. Ecological layers in the original figures have their own sources and dates.</p><form method="dialog"><button>Close</button></form></dialog>
+  <button id="about-data" aria-label="About the dataset">SOURCE / ?</button>
+</main></body></html>

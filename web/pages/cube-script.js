@@ -146,8 +146,8 @@ async function startViewer() {
     atlas.renderOrder=3;
     // Match source coordinates, inheriting any transforms on the source mesh.
     surface.add(atlas);
-    const {createSpatialAtlas}=await import('../spatial-atlas.js');
-    atlasController = await createSpatialAtlas(atlasCanvas,document.querySelector('#spatial-play'),document.querySelector('#spatial-status'),new URL('../data/',import.meta.url));
+    const {createSpatialAtlas}=await import('../spatial-atlas.js?v=runtime-2');
+    atlasController = await createSpatialAtlas(atlasCanvas,document.querySelector('#spatial-play'),document.querySelector('#spatial-status'),new URL('../assets/content/piano-03/',import.meta.url));
     contentControllers.set(atlasTexture,atlasController);
     // Plane 01 is the highest exported elevation, separate from the IPv4 floor.
     const firstVertices=[];
@@ -164,7 +164,7 @@ async function startViewer() {
     const firstTexture=new THREE.CanvasTexture(firstCanvas);firstTexture.colorSpace=THREE.SRGBColorSpace;firstTexture.anisotropy=renderer.capabilities.getMaxAnisotropy();
     const firstMaterial=material.clone();firstMaterial.map=firstTexture;
     const firstAtlas=new THREE.Mesh(firstGeometry,firstMaterial);firstAtlas.name='Submarine cables / first plane';firstAtlas.userData.contentPlane=0;firstAtlas.renderOrder=3;surface.add(firstAtlas);
-    const {createCableAtlas}=await import('../cable-atlas.js');
+    const {createCableAtlas}=await import('../cable-atlas.js?v=runtime-2');
     try {
       contentControllers.set(firstTexture,await createCableAtlas(firstCanvas));
     } catch (error) {
