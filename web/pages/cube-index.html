@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0000ff">
+  <title>e-ntanglement / Enter the field</title>
+  <link rel="stylesheet" href="cube-style.css?v=inhabit-3">
+  <script type="importmap">{"imports":{"three":"../assets/vendor/three/build/three.module.js","three/addons/":"../assets/vendor/three/examples/jsm/"}}</script>
+  <script type="module" src="cube-script.js?v=blue-desktop-3"></script>
+</head>
+<body>
+  <main id="viewer" aria-label="Explorable data vortex">
+    <canvas id="field" tabindex="0" aria-label="Interactive vortex. Outside: drag to orbit. Inside: drag to look, WASD to move, Q and E to change height."></canvas>
+    <header class="heading"><h1>e-ntanglement</h1><p class="subtitle">Who owns the space<br>you are moving through?</p></header>
+    <button id="about-open" class="about-open" type="button" aria-controls="about-dialog" aria-expanded="false">ABOUT / PROJECT ↗</button>
+    <dialog id="about-dialog" aria-labelledby="about-title">
+      <header class="about-title"><h2 id="about-title">ABOUT / E-NTANGLEMENT</h2><form method="dialog"><button aria-label="Close About">×</button></form></header>
+      <div class="about-copy">
+        <p>The word <em>entanglement</em> is used in physics to describe the phenomenon in which two or more particles become interconnected, so that the state of one instantly influences the state of another, no matter how far apart they are.</p>
+        <p>Here, entanglement becomes a metaphor for the dependencies that shape the internet. A space created to connect people has become a place where connections turn into constraints: those who control data, platforms, and infrastructure define the terms of economic and political independence.</p>
+        <p>The internet is in continuous expansion, and we can only grasp a crystallization of its present condition. This project conceptualizes it as a three-dimensional space that can be explored and sectioned in countless directions. The vertical slice investigated here uses <strong>Control</strong> as a critical lens and <strong>Scale</strong> as a narrative line.</p>
+        <p><em>E-ntanglement</em> is a critical project that investigates who holds power over the internet and how each of us is entangled within it. The internet is its field of investigation; the interface is the medium through which it is represented. To navigate this topic, I allow myself to get lost in this infinite collection of data, remembering that data never represents objective truth, but that the way it is represented builds only one subjective narrative among many.</p>
+        <p>Nine different stories share one underlying plot: control has taken over the space created for connection. Who owns the power? What room remains for the people entangled within it? And if the internet is dead, what can still be saved?</p>
+      </div>
+      <footer class="about-footer">A THEORETICAL MACHINE / 09 FRAMES</footer>
+    </dialog>
+    <div class="edge-text" aria-hidden="true">TERRITORY IS AN INTERFACE IS A TERRITORY IS AN INTERFACE</div>
+    <div class="mode-label"><span class="live-dot"></span><span id="view-mode">OBSERVING FROM OUTSIDE</span><output id="coordinates">X 0.00 / Y 0.00 / Z 0.00</output></div>
+    <button id="enter-vortex" class="enter" type="button" disabled><span>DON’T JUST<br>LOOK AT IT.</span><strong>ENTER ↘</strong></button>
+    <nav class="level-nav" aria-label="Level navigation">
+      <details open><summary>LEVELS <output id="selected-level">03 / 09</output></summary>
+        <p id="level-menu-help">Select to highlight. ENTER to go inside.</p>
+        <div id="level-list"></div>
+        <div class="level-step"><button id="level-prev" aria-label="Previous level">↑ Previous</button><button id="level-next" aria-label="Next level">Next ↓</button></div>
+        <button id="level-overview">↶ Overview</button>
+      </details>
+    </nav>
+    <aside class="panel" aria-label="Exploration tools" hidden>
+      <details><summary>↗ ANATOMY OF THE FIELD <span>LAYERS</span></summary><fieldset id="layers" disabled><legend>Visible geometry</legend><div id="layer-list"></div></fieldset></details>
+      <div class="instrument-row"><button id="spatial-play" type="button" aria-pressed="true">Pause data motion Ⅱ</button><button id="rotation" type="button" aria-pressed="true">Orbit ↻</button></div>
+      <label class="wall-control" for="wall-height">STRETCH THE WALLS <input id="wall-height" type="range" min="0" max="150" value="100"><output id="wall-value">100%</output></label>
+      <div class="instrument-row"><button id="reset-view" type="button" disabled>↶ Reset view</button><button id="data-info" type="button" aria-expanded="false" aria-controls="evidence">? Read the evidence</button></div>
+      <p id="spatial-status" role="status">Caricamento atlante…</p>
+    </aside>
+    <section id="evidence" hidden><button id="close-evidence" aria-label="Close data note">×</button><h2>A location is an estimate.</h2><p>244 country / organization records. Amazon, Meta, Google, Microsoft. BGP snapshot: 01.10.2026.</p><p>The maps show observed IPv4 address space associated with selected organizations and estimated countries. They do not measure traffic, legal ownership or server buildings. Color: national share (power scale, gamma 0.3). Fixed-size, fixed-spacing points form a cartographic texture, not observed locations.</p><p>Repetition across walls is spatial, not quantitative. Source: Assignment 03 / Spatial Relatedness.</p></section>
+    <div id="inside-controls" hidden aria-label="Move inside the vortex"><button data-move="forward" aria-label="Forward">↑</button><button data-move="left" aria-label="Left">←</button><button data-move="back" aria-label="Backward">↓</button><button data-move="right" aria-label="Right">→</button><button data-move="up" aria-label="Up">＋</button></div>
+    <nav id="story-dock" aria-label="Atlas storyboard" hidden>
+      <p class="story-plane-label">PLANE 03 / SPATIAL RELATEDNESS</p>
+      <div id="story-chapters"></div>
+      <label for="story-position">STORY POSITION <output id="story-time">00 / 32s</output></label>
+      <input id="story-position" type="range" min="0" max="32" step="0.05" value="0" aria-label="Storyboard position">
+    </nav>
+    <section id="storyboard" hidden role="dialog" aria-modal="true" aria-labelledby="story-heading" tabindex="-1">
+      <header class="story-header"><div><p>e-ntanglement / PLANE 03</p><h2 id="story-heading">An atlas, in sequence.</h2></div><button id="story-close" type="button">Back to vortex ↗</button></header>
+      <nav id="reading-chapters" aria-label="Storyboard chapters"></nav>
+      <div class="story-workspace">
+        <article class="story-stage">
+          <div class="plate-heading"><p id="plate-number"></p><h3 id="plate-title"></h3></div>
+          <div class="map-tools"><button id="story-prev" aria-label="Previous plate">← Previous</button><button id="story-next" aria-label="Next plate">Next →</button><button id="map-zoom" aria-pressed="false">Zoom in +</button><a id="plate-preview" target="_blank" rel="noopener">Original image ↗</a><a id="plate-pdf" target="_blank" rel="noopener">PDF ↗</a></div>
+          <div class="plate-viewport" id="plate-viewport"><img id="plate-image" alt=""></div>
+          <p id="plate-metric"></p><p id="story-question"></p><p id="story-reading"></p>
+        </article>
+        <article class="story-inspector" aria-label="Selected plate data">
+          <div class="data-heading"><h3>Plate data</h3><button id="story-export" type="button">Download CSV ↓</button></div>
+          <label for="story-search">Search country, code or organization<input id="story-search" type="search" placeholder="Italy, US, Amazon…"></label>
+          <p id="story-data-note"></p>
+          <div class="story-table-wrap"><table><thead><tr><th aria-sort="none"><button data-sort="name">Country ↕</button></th><th aria-sort="none"><button data-sort="company">Organization ↕</button></th><th aria-sort="descending"><button data-sort="amount">IPv4 ↓</button></th><th aria-sort="none"><button data-sort="share">Share % ↕</button></th></tr></thead><tbody id="story-records"></tbody></table></div>
+          <p id="story-record-count" role="status"></p>
+        </article>
+      </div>
+      <nav id="story-filmstrip" aria-label="The twenty storyboard plates"></nav>
+      <p class="story-disclaimer">One plate at a time. Search and CSV refer to the selected plate dataset. — means unavailable. Scales and sources are shown on the maps.</p>
+    </section>
+    <section id="cable-reader" hidden role="dialog" aria-modal="true" aria-label="Plane 01 desktop workspace">
+      <iframe id="cable-desktop-frame" title="Plane 01: charts, commented code, dataset and interactive globe"></iframe>
+    </section>
+    <p id="status" role="status">Assembling the field…</p>
+    <p class="help" id="navigation-help">DRAG TO ORBIT · SCROLL TO APPROACH · SELECT A LEVEL TO ENTER</p>
+    <div class="ticker" aria-hidden="true" hidden><div>THE INTERNET IS NOT ELSEWHERE ↗ WHOSE WORLD / HOW WIDE / WHICH WEB ↗ THE INTERNET IS NOT ELSEWHERE ↗ WHOSE WORLD / HOW WIDE / WHICH WEB ↗ </div></div>
+    <noscript>Enable JavaScript to explore the vortex.</noscript>
+  </main>
+</body>
+</html>
